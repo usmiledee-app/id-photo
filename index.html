@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USmileDee - ID PHOTO</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class=""
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 999999;
+      "
+    >
+      <iframe
+        id="showFrame"
+        src="https://script.google.com/macros/s/AKfycbwz68uca0yyecGZE7eG95FJgXpSFp7epqoeBXNXbDYAHWA9EFK1ggBYVu8T1P8wBZTHGg/exec?page=resources&id="
+        frameborder="0"
+        height="100%"
+        width="100%"
+      ></iframe>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (e) => {
+        let url = new URL(document.location.href);
+        let ssid = url.searchParams.get("id");
+        document.getElementById("showFrame").src += ssid;
+      });
+    </script>
+  </body>
+</html>
